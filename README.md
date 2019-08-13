@@ -1,5 +1,10 @@
 # Hystrix Metrics for Opossum Circuit Breaker
 
+[![CircleCI](https://circleci.com/gh/nodeshift/opossum-hystrix.svg?style=svg)](https://circleci.com/gh/nodeshift/opossum-hystrix)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/de288081beba4c9297b88e2057204149)](https://www.codacy.com/app/nodeshift/opossum-hystrix?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=nodeshift/opossum-hystrix&amp;utm_campaign=Badge_Grade)
+[![dependencies Status](https://david-dm.org/nodeshift/opossum-hystrix/status.svg)](https://david-dm.org/nodeshift/opossum-hystrix)
+[![Known Vulnerabilities](https://snyk.io/test/npm/opossum-hystrix/badge.svg)](https://snyk.io/test/npm/opossum-hystrix)
+
 This module provides [Hystrix](https://github.com/Netflix/Hystrix) metrics for
 [opossum](https://github.com/nodeshift/opossum) circuit breakers. To use
 it with your circuit breakers, just pass them in to the `HystrixStats`
