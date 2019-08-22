@@ -1,17 +1,17 @@
 'use strict';
 
 const test = require('tape');
-const cb = require('opossum');
+const CircuitBreaker = require('opossum');
 const HystrixStats = require('../');
 
 test('A circuit should provide stats to a hystrix compatible stream', t => {
   t.plan(2);
-  const circuitOne = cb(passFail, {
+  const circuitOne = new CircuitBreaker(passFail, {
     rollingCountTimeout: 100,
     rollingCountBuckets: 1,
     name: 'circuit one'
   });
-  const circuitTwo = cb(passFail, {
+  const circuitTwo = new CircuitBreaker(passFail, {
     rollingCountTimeout: 100,
     rollingCountBuckets: 1,
     name: 'circuit two'
@@ -34,12 +34,12 @@ test('A circuit should provide stats to a hystrix compatible stream', t => {
 
 test('Hystrix stats should accept additional circuits', t => {
   t.plan(2);
-  const circuitOne = cb(passFail, {
+  const circuitOne = new CircuitBreaker(passFail, {
     rollingCountTimeout: 100,
     rollingCountBuckets: 1,
     name: 'circuit one'
   });
-  const circuitTwo = cb(passFail, {
+  const circuitTwo = new CircuitBreaker(passFail, {
     rollingCountTimeout: 100,
     rollingCountBuckets: 1,
     name: 'circuit two'
@@ -74,4 +74,3 @@ function passFail (x) {
     }, 100);
   });
 }
-
