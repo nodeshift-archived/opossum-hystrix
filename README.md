@@ -6,7 +6,7 @@
 [![dependencies Status](https://david-dm.org/nodeshift/opossum-hystrix/status.svg)](https://david-dm.org/nodeshift/opossum-hystrix)
 [![Known Vulnerabilities](https://snyk.io/test/npm/opossum-hystrix/badge.svg)](https://snyk.io/test/npm/opossum-hystrix)
 
-[![NPM](https://nodei.co/npm/opossum-hystrix.png)](https://npmjs.org/package/opossum-hystrix)
+[![NPM](https://nodei.co/npm/opossum-hystrix.png)](https://npmjs.org/package/opossum-hystrix) [![Greenkeeper badge](https://badges.greenkeeper.io/nodeshift/opossum-hystrix.svg)](https://greenkeeper.io/)
 
 This module provides [Hystrix](https://github.com/Netflix/Hystrix) metrics for
 [opossum](https://github.com/nodeshift/opossum) circuit breakers. To use
