@@ -15,8 +15,8 @@ constructor.
 
 ## Hystrix Dashboard Stream
 
-A Hystrix Stream is available for use with a Hystrix Dashboard using the 
-`HystrixStats#stream` property. This property provies a 
+A Hystrix Stream is available for use with a Hystrix Dashboard using the
+`HystrixStats#stream` property. This property provies a
 [Node.js Stream](https://nodejs.org/api/stream.html), making it straightforward
 to create an Server Side Event stream that will be compliant with a Hystrix Dashboard.
 
@@ -29,7 +29,7 @@ This module would typically be used in an application that can provide
 an endpoint for the Hystrix Dashboard to monitor.
 
 ```js
-  const circuitBreaker = require('opossum');
+  const CircuitBreaker = require('opossum');
   const HystrixStats = require('opossum-hystrix');
   const express = require('express');
 
@@ -37,8 +37,8 @@ an endpoint for the Hystrix Dashboard to monitor.
   app.use('/hystrix.stream', hystrixStream);
 
   // create a couple of circuit breakers
-  const c1 = circuitBreaker(someFunction);
-  const c2 = circuitBreaker(someOtherfunction);
+  const c1 = new CircuitBreaker(someFunction);
+  const c2 = new CircuitBreaker(someOtherfunction);
 
   // Provide them to the constructor
   const hystrixMetrics = new HystrixMetrics([c1, c2]);
@@ -48,7 +48,7 @@ an endpoint for the Hystrix Dashboard to monitor.
       response.writeHead(200, {
         'Content-Type': 'text/event-stream',
         'Cache-Control': 'no-cache',
-        'Connection': 'keep-alive' 
+        'Connection': 'keep-alive'
         });
       response.write('retry: 10000\n');
       response.write('event: connecttime\n');
