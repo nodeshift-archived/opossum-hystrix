@@ -1,7 +1,7 @@
 # Hystrix Metrics for Opossum Circuit Breaker
 
 [![CircleCI](https://circleci.com/gh/nodeshift/opossum-hystrix.svg?style=svg)](https://circleci.com/gh/nodeshift/opossum-hystrix)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/de288081beba4c9297b88e2057204149)](https://www.codacy.com/app/nodeshift/opossum-hystrix?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=nodeshift/opossum-hystrix&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/de288081beba4c9297b88e2057204149)](https://www.codacy.com/app/nodeshift/opossum-hystrix?utm_source=github.com&utm_medium=referral&utm_content=nodeshift/opossum-hystrix&utm_campaign=Badge_Grade)
 [![Codacy Badge](https://api.codacy.com/project/badge/Coverage/de288081beba4c9297b88e2057204149)](https://www.codacy.com/app/nodeshift/opossum-hystrix?utm_source=github.com&utm_medium=referral&utm_content=nodeshift/opossum-hystrix&utm_campaign=Badge_Coverage)
 [![dependencies Status](https://david-dm.org/nodeshift/opossum-hystrix/status.svg)](https://david-dm.org/nodeshift/opossum-hystrix)
 [![Known Vulnerabilities](https://snyk.io/test/npm/opossum-hystrix/badge.svg)](https://snyk.io/test/npm/opossum-hystrix)
@@ -22,7 +22,6 @@ to create an Server Side Event stream that will be compliant with a Hystrix Dash
 
 Additional Reading: [Hystrix Metrics Event Stream](https://github.com/Netflix/Hystrix/tree/master/hystrix-contrib/hystrix-metrics-event-stream), [Turbine](https://github.com/Netflix/Turbine/wiki), [Hystrix Dashboard](https://github.com/Netflix/Hystrix/wiki/Dashboard)
 
-
 ## Example Usage
 
 This module would typically be used in an application that can provide
@@ -41,7 +40,7 @@ an endpoint for the Hystrix Dashboard to monitor.
   const c2 = new CircuitBreaker(someOtherfunction);
 
   // Provide them to the constructor
-  const hystrixMetrics = new HystrixMetrics([c1, c2]);
+  const hystrixMetrics = new HystrixStats([c1, c2]);
 
   // Provide a Server Side Event stream of metrics data
   function hystrixStream (request, response) {
@@ -53,7 +52,7 @@ an endpoint for the Hystrix Dashboard to monitor.
       response.write('retry: 10000\n');
       response.write('event: connecttime\n');
 
-      HystrixStats.stream.pipe(response);
+      hystrixMetrics.stream.pipe(response);
     };
   }
 ```
