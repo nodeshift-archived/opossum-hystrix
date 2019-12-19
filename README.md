@@ -52,7 +52,7 @@ an endpoint for the Hystrix Dashboard to monitor.
       response.write('retry: 10000\n');
       response.write('event: connecttime\n');
 
-      hystrixMetrics.stream.pipe(response);
+      HystrixStats.stream.pipe(response);
     };
   }
 ```
