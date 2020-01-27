@@ -5,7 +5,7 @@ const CircuitBreaker = require('opossum');
 const HystrixStats = require('../');
 
 test('A circuit should provide stats to a hystrix compatible stream', t => {
-  t.plan(2);
+  t.plan(3);
   const circuitOne = new CircuitBreaker(passFail, {
     rollingCountTimeout: 100,
     rollingCountBuckets: 1,
@@ -18,6 +18,7 @@ test('A circuit should provide stats to a hystrix compatible stream', t => {
   });
   const hystrixStats = new HystrixStats([circuitOne, circuitTwo]);
   const stream = hystrixStats.getHystrixStream();
+  t.equal(stream, hystrixStats.stream);
   let circuitOneStatsSeen = false;
   let circuitTwoStatsSeen = false;
   stream.on('data', blob => {
@@ -58,6 +59,23 @@ test('Hystrix stats should accept additional circuits', t => {
     t.ok(circuitOneStatsSeen, 'circuit one stats seen');
     t.ok(circuitTwoStatsSeen, 'circuit two stats seen');
     t.end();
+  });
+});
+
+test('Shutdown does not leak', t => {
+  t.plan(1);
+  const circuitOne = new CircuitBreaker(passFail, {
+    rollingCountTimeout: 100,
+    rollingCountBuckets: 1,
+    name: 'circuit one'
+  });
+  const listeners = circuitOne.status.listenerCount('snapshot');
+  const hystrixStats = new HystrixStats([circuitOne]);
+  circuitOne.fire(10).then(_ => {
+    hystrixStats.shutdown();
+    circuitOne.fire(10).then(_ => {
+      t.equal(circuitOne.status.listenerCount('snapshot'), listeners);
+    });
   });
 });
 
