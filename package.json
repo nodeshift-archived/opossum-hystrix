@@ -1,6 +1,6 @@
 {
   "name": "opossum-hystrix",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Hystrix metrics for opossum circuit breaker",
   "main": "index.js",
   "scripts": {
