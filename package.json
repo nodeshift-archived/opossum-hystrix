@@ -10,7 +10,9 @@
     "ci": "npm run test && npm run coverage",
     "prerelease": "npm run ci",
     "release": "standard-version -s -a",
-    "lint": "standardx test/*.js index.js"
+    "lint": "standardx test/*.js index.js",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "support": {
     "target": "LTS",
@@ -32,5 +34,9 @@
     "standardx": "^5.0.0",
     "tap-spec": "^5.0.0",
     "tape": "^4.13.2"
+  },
+  "snyk": true,
+  "dependencies": {
+    "snyk": "^1.316.1"
   }
 }
