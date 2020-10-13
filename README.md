@@ -1,12 +1,9 @@
 # Hystrix Metrics for Opossum Circuit Breaker
 
-[![CircleCI](https://circleci.com/gh/nodeshift/opossum-hystrix.svg?style=svg)](https://circleci.com/gh/nodeshift/opossum-hystrix)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/de288081beba4c9297b88e2057204149)](https://www.codacy.com/app/nodeshift/opossum-hystrix?utm_source=github.com&utm_medium=referral&utm_content=nodeshift/opossum-hystrix&utm_campaign=Badge_Grade)
-[![Codacy Badge](https://api.codacy.com/project/badge/Coverage/de288081beba4c9297b88e2057204149)](https://www.codacy.com/app/nodeshift/opossum-hystrix?utm_source=github.com&utm_medium=referral&utm_content=nodeshift/opossum-hystrix&utm_campaign=Badge_Coverage)
+![Node.js CI](https://github.com/nodeshift/opossum-hystrix/workflows/Node.js%20CI/badge.svg)
+[![Coverage Status](https://coveralls.io/repos/github/nodeshift/opossum-hystrix/badge.svg?branch=master)](https://coveralls.io/github/nodeshift/opossum-hystrix?branch=master)
 [![dependencies Status](https://david-dm.org/nodeshift/opossum-hystrix/status.svg)](https://david-dm.org/nodeshift/opossum-hystrix)
 [![Known Vulnerabilities](https://snyk.io/test/npm/opossum-hystrix/badge.svg)](https://snyk.io/test/npm/opossum-hystrix)
-
-[![NPM](https://nodei.co/npm/opossum-hystrix.png)](https://npmjs.org/package/opossum-hystrix) [![Greenkeeper badge](https://badges.greenkeeper.io/nodeshift/opossum-hystrix.svg)](https://greenkeeper.io/)
 
 This module provides [Hystrix](https://github.com/Netflix/Hystrix) metrics for
 [opossum](https://github.com/nodeshift/opossum) circuit breakers. To use
