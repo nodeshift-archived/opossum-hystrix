@@ -30,7 +30,7 @@
     "standard-version": "^9.1.0",
     "standardx": "^5.0.0",
     "tap-spec": "^5.0.0",
-    "tape": "^5.0.1"
+    "tape": "^5.1.0"
   },
   "engines": {
     "node": "^14 || ^12 || ^10"
