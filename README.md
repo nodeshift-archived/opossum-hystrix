@@ -1,7 +1,7 @@
 # Hystrix Metrics for Opossum Circuit Breaker
 
 ![Node.js CI](https://github.com/nodeshift/opossum-hystrix/workflows/Node.js%20CI/badge.svg)
-[![Coverage Status](https://coveralls.io/repos/github/nodeshift/opossum-hystrix/badge.svg?branch=master)](https://coveralls.io/github/nodeshift/opossum-hystrix?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/nodeshift/opossum-hystrix/badge.svg?branch=main)](https://coveralls.io/github/nodeshift/opossum-hystrix?branch=main)
 [![dependencies Status](https://david-dm.org/nodeshift/opossum-hystrix/status.svg)](https://david-dm.org/nodeshift/opossum-hystrix)
 [![Known Vulnerabilities](https://snyk.io/test/npm/opossum-hystrix/badge.svg)](https://snyk.io/test/npm/opossum-hystrix)
 
