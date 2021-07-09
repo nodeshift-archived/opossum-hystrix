@@ -1,3 +1,5 @@
+This module is deprecated.
+
 # Hystrix Metrics for Opossum Circuit Breaker
 
 ![Node.js CI](https://github.com/nodeshift/opossum-hystrix/workflows/Node.js%20CI/badge.svg)
